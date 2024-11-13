@@ -6,8 +6,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>8</maven.compiler.source>
-		<maven.compiler.target>8</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -25,6 +25,13 @@
 			<artifactId>junit</artifactId>
 			<version>4.13.2</version>
 		</dependency>
+
+		<!-- JavaFX dependency -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>20.0.2</version> <!-- Versionsnummer abhängig von Ihrer JavaFX-Installation -->
+        </dependency>
 	</dependencies>
 	<build>
 		<pluginManagement>
@@ -69,6 +76,16 @@
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>3.0.0</version>
 				</plugin>
+
+				<!-- Plugin zum Ausführen der JavaFX-Anwendung -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>de.htwg.BmiCalculator</mainClass>
+                </configuration>
+            </plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
