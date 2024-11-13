@@ -14,10 +14,3 @@ test:
   needs: ["build"]
   script:
     - mvn test
-    
-install:
-  stage: install
-  needs: ["test"]
-  script:
-    - mvn install
-
